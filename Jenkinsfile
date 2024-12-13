@@ -26,7 +26,7 @@ pipeline {
         stage('Stage 1: Git Clone') {
             steps {
                 echo 'Cloning the Git repository'
-                git branch: 'master', url: 'https://github.com/AK232003/SPE-Project.git'
+                git branch: 'master', url: 'https://github.com/anantzz/anantzz-Personal-Finance-Tracker.git'
             }
         }
         
@@ -35,7 +35,7 @@ pipeline {
                 echo 'Building backend Docker image'
                 dir('backend')
                 {
-                    sh "docker build -t todorokishotoua15/${backend} ."
+                    sh "docker build -t serialcomder/${backend} ."
                 }
             }
         }
@@ -45,7 +45,7 @@ pipeline {
                 echo 'Building frontend Docker image'
                 dir('frontend') {
                     echo 'Changing to frontend directory'
-                    sh "docker build -t todorokishotoua15/${frontend} ."
+                    sh "docker build -t serialcomder/${frontend} ."
                 }
             }
         }
@@ -55,7 +55,7 @@ pipeline {
                 echo 'Pushing backend Docker image to DockerHub'
                 script {
                     docker.withRegistry('', 'DockerHubCred') {
-                        sh "docker push todorokishotoua15/${backend}"
+                        sh "docker push serialcomder/${backend}"
                     }
                 }
             }
@@ -66,7 +66,7 @@ pipeline {
                 echo 'Pushing frontend Docker image to DockerHub'
                 script {
                     docker.withRegistry('', 'DockerHubCred') {
-                        sh "docker push todorokishotoua15/${frontend}"
+                        sh "docker push serialcomder/${frontend}"
                     }
                 }
             }
