@@ -35,7 +35,7 @@ pipeline {
                 echo 'Building backend Docker image'
                 dir('backend')
                 {
-                    sh "docker build -t ak232003/${backend} ."
+                    sh "docker build -t todorokishotoua15/${backend} ."
                 }
             }
         }
@@ -45,7 +45,7 @@ pipeline {
                 echo 'Building frontend Docker image'
                 dir('frontend') {
                     echo 'Changing to frontend directory'
-                    sh "docker build -t ak232003/${frontend} ."
+                    sh "docker build -t todorokishotoua15/${frontend} ."
                 }
             }
         }
@@ -55,7 +55,7 @@ pipeline {
                 echo 'Pushing backend Docker image to DockerHub'
                 script {
                     docker.withRegistry('', 'DockerHubCred') {
-                        sh "docker push ak232003/${backend}"
+                        sh "docker push todorokishotoua15/${backend}"
                     }
                 }
             }
@@ -66,7 +66,7 @@ pipeline {
                 echo 'Pushing frontend Docker image to DockerHub'
                 script {
                     docker.withRegistry('', 'DockerHubCred') {
-                        sh "docker push ak232003/${frontend}"
+                        sh "docker push todorokishotoua15/${frontend}"
                     }
                 }
             }
