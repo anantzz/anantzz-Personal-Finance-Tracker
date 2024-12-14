@@ -10,7 +10,7 @@ describe('POST /register', () => {
       request(app)
         .post('/register')
         .send({
-          name: 'Arya',
+          name: 'Anant',
           username: 'test12@gmail.com',
           password: '1234',
         })
@@ -24,7 +24,7 @@ describe('POST /login', () => {
     request(app)
       .post('/login')
       .send({
-        name: 'Arya',
+        name: 'Anant',
         username: 'test12@gmail.com',
         password: '1234',
       })
@@ -43,7 +43,7 @@ describe('POST /api/v1/add-income', () => {
         amount: 1000,
         category: 'freelancing',
         description: 'testing',
-        date: '12/07/2023',
+        date: '14/12/2024',
       })
       .expect(200)
       done();
@@ -60,7 +60,7 @@ describe('POST /api/v1/add-expense', () => {
         amount: 500,
         category: 'groceries',
         description: 'testing',
-        date: '12/07/2023',
+        date: '14/12/2024',
       })
       .expect(200)
       done();
@@ -77,7 +77,7 @@ describe('POST /api/v1/add-income', () => {
         amount: -1000,
         category: 'freelancing',
         description: 'testing',
-        date: '12/07/2023',
+        date: '14/12/2024',
       })
       .expect(400)
       .end((err, res) => {
@@ -99,7 +99,7 @@ describe('POST /api/v1/add-income', () => {
           amount: -1000,
           category: 'groceries',
           description: 'testing',
-          date: '12/07/2023',
+          date: '14/12/2024',
         })
         .expect(400)
         .end((err, res) => {
